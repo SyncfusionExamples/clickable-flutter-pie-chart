@@ -48,64 +48,6 @@ class _MyHomePageState extends State<_MyHomePage> {
              double value = double.parse(args.text);
              args.text = value.toStringAsFixed(0);
             },
-              onPointTapped: (PointTapArgs args){
-                if (args.pointIndex == 0) {
-            setState(() {
-              chartData = <_SalesData>[
-                _SalesData('Jan', 45),
-                _SalesData('Feb', 18),
-                _SalesData('Mar', 24),
-                _SalesData('Apr', 22),
-                _SalesData('May', 30)
-              ];
-            });
-          }
-          if (args.pointIndex == 1) {
-            setState(() {
-              chartData = <_SalesData>[
-                _SalesData('Jan', 40),
-                _SalesData('Feb', 13),
-                _SalesData('Mar', 19),
-                _SalesData('Apr', 17),
-                _SalesData('May', 25)
-              ];
-            });
-          }
-            if (args.pointIndex == 2) {
-            setState(() {
-              chartData = <_SalesData>[
-                _SalesData('Jan', 50),
-                _SalesData('Feb', 23),
-                _SalesData('Mar', 29),
-                _SalesData('Apr', 27),
-                _SalesData('May', 35)
-              ];
-            });
-          }
-
-           if (args.pointIndex == 3) {
-            setState(() {
-              chartData = <_SalesData>[
-                _SalesData('Jan', 60),
-                _SalesData('Feb', 33),
-                _SalesData('Mar', 39),
-                _SalesData('Apr', 37),
-                _SalesData('May', 45)
-              ];
-            });
-          }
-           if (args.pointIndex == 4) {
-            setState(() {
-              chartData = <_SalesData>[
-                _SalesData('Jan', 70),
-                _SalesData('Feb', 48),
-                _SalesData('Mar', 49),
-                _SalesData('Apr', 47),
-                _SalesData('May', 60)
-              ];
-            });
-          }
-              },
               series: <CircularSeries<_SalesData, String>>[
                 PieSeries<_SalesData, String>(
                   selectionBehavior: SelectionBehavior(enable: true),
