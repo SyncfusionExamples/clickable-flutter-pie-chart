@@ -17,7 +17,7 @@ class _ChartApp extends StatelessWidget {
 
 class _MyHomePage extends StatefulWidget {
   // ignore: prefer_const_constructors_in_immutables
-  _MyHomePage({Key key}) : super(key: key);
+  _MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -43,21 +43,22 @@ class _MyHomePageState extends State<_MyHomePage> {
           width: 320,
           //Initialize the chart widget
           child: SfCircularChart(
-            backgroundColor: Colors.white,
-            onDataLabelRender: (DataLabelRenderArgs args){
-             double value = double.parse(args.text);
-             args.text = value.toStringAsFixed(0);
-            },
+              backgroundColor: Colors.white,
+              onDataLabelRender: (DataLabelRenderArgs args) {
+                double value = double.parse(args.text!);
+                args.text = value.toStringAsFixed(0);
+              },
               series: <CircularSeries<_SalesData, String>>[
                 PieSeries<_SalesData, String>(
-                  selectionBehavior: SelectionBehavior(enable: true),
-                  explode: true,
-                  dataSource: chartData,
-                  xValueMapper: (_SalesData sales, _) => sales.year,
-                  yValueMapper: (_SalesData sales, _) => sales.sales,
-                  name: 'Sales',
-                  dataLabelSettings: DataLabelSettings(isVisible: true,)
-                )
+                    selectionBehavior: SelectionBehavior(enable: true),
+                    explode: true,
+                    dataSource: chartData,
+                    xValueMapper: (_SalesData sales, _) => sales.year,
+                    yValueMapper: (_SalesData sales, _) => sales.sales,
+                    name: 'Sales',
+                    dataLabelSettings: DataLabelSettings(
+                      isVisible: true,
+                    ))
               ]),
         )));
   }
